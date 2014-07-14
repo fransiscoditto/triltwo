@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+<% provide(:title, 'Show') %>
+
+<div id=content>
+
+  <h4><%= @photo.name %></h4>
+  <%= @photo.created_at.strftime("%d %B %Y") %><br><br>
+  <%= image_tag(@photo.picture_url, :width => 600) if @photo.picture.present? %><br><br>
+  <%= @photo.caption %><br><br>
+<a href="/images">Back</a>
+
+<hr>
+
+  <h4 id=hasatu>Comments</h4>
+<% @photo.photocomments.each do |photocomment| %>
+  <p><strong><%= photocomment.username %></strong> said..<br>
+  <%= photocomment.body %>
+  
+  <br><br>
+  </p>
+  
+<% end %>
+
+<hr>
+  
+  <h4 id=hasatu>Tell us what you think:</h4><br>
+<%= form_for([@photo, @photo.photocomments.build]) do |f| %>
+  <p>
+    <%= f.label :Name %><br>
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :Comment %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit "Tell" %>
+  </p>
+<% end %>
+  
+</div>

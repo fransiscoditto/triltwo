@@ -1,0 +1,27 @@
+<h1>Listing blogcomments</h1>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Body</th>
+    <th>Blog</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @blogcomments.each do |blogcomment| %>
+  <tr>
+    <td><%= blogcomment.username %></td>
+    <td><%= blogcomment.body %></td>
+    <td><%= blogcomment.blog_id %></td>
+    <td><%= link_to 'Show', blogcomment %></td>
+    <td><%= link_to 'Edit', edit_blogcomment_path(blogcomment) %></td>
+    <td><%= link_to 'Destroy', blogcomment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Blogcomment', new_blogcomment_path %>

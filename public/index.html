@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<HEAD>
+<LINK href="pages.css" rel="stylesheet" type="text/css">
+
+<script src="jquery-1.9.1.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("#enter").mouseenter(function(){
+    $("#enter").animate({	  
+      height:'+=20px',
+      width:'+=120px'
+    });
+  });
+    $("#enter").mouseleave(function(){
+    $("#enter").animate({	  
+      height:'-=20px',
+      width:'-=120px'
+    });
+});
+});
+</script> 
+
+  </HEAD>
+<body background="Untitled.jpg">
+
+<div id=upopen>
+  <br>
+  The Parlente's <br/>
+  Official Site  <br/><br/>
+ 
+  <object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/AWwkJjK61ZU?hl=en_GB&amp;version=3&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param>
+  <embed src="http://www.youtube.com/v/AWwkJjK61ZU?hl=en_GB&amp;version=3&amp;rel=0&autoplay=1"
+  type="application/x-shockwave-flash" width="560" height="315"
+  allowscriptaccess="always" allowfullscreen="true"></embed></object>
+  
+  <br><br>
+    
+  </div>
+  
+  <div id=enter><br><br><br>
+  <a href="/home">Enter Site</a>
+  </div>
+  
+</body>
+</html>

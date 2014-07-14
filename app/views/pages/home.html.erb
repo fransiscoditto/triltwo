@@ -1,0 +1,63 @@
+<% provide(:title, 'Home') %>
+<%= render 'layouts/slide' %>
+<br>
+<%= render 'layouts/navigation' %>
+<h1>Home</h1>
+<div id=content>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("#flip").mouseenter(function(){
+    $("#panel").slideToggle("slow");
+	$("#flip").animate({
+	opacity:'0.1'});
+	});
+  $("#flip").mouseleave(function(){
+    $("#panel").slideToggle("slow");
+	$("#flip").animate({
+	opacity:'1'});
+	});
+  });
+
+</script>
+
+<body>
+ 
+<div id="flip"><b>HI!</b></div>
+<div id="panel">
+<b>Welcome to our site!
+<br><br>
+We are an Indonesian Post Punk Band from Jakarta, Indonesia.</b>
+</div>
+
+<hr>
+
+<h4 id=hasatu>Latest Post</h4><br>
+
+<% @blogs.each do |blog| %>
+
+<h5 id=hadua><%= blog.name %></h5>
+<%= blog.created_at.strftime("%D") %><br>
+<%= blog.description.truncate(300).html_safe %><br><br>
+
+<% end %>
+
+<h5 id=hasatu><a href="/posts">Show all posts</a></h5>
+
+<hr>
+
+<h4 id=hasatu>Latest Images</h4>
+
+<% @photos.each do |photo| %>
+    <div id=fotoone>
+	
+    <%= image_tag photo.picture_url(:thumb) if photo.picture? %>
+	
+	</div>
+<% end %>
+<br><br><br><br>
+<h5 id=hasatu><a href="/images">Show all images</a></h5>
+ 
+</div>
+</body>
+</html>

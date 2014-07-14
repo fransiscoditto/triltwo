@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+<% provide(:title, 'Show') %>
+
+<div id=content>
+
+  <h4><%= @photo.name %></h4>
+  <%= image_tag(@photo.picture_url, :width => 600) if @photo.picture.present? %><br>
+  <%= @photo.caption %><br><br>
+  
+  <%= link_to 'Edit', edit_backend_photo_path(@photo) %> |
+<%= link_to 'Back', backend_photos_path %><br><br>
+  
+  <h4 id=hasatu>Comments</h4>
+<% @photo.photocomments.each do |photocomment| %>
+  <p>
+    <strong>Name : </strong>
+    <%= photocomment.username %>
+  </p>
+ 
+  <p>
+    <strong>Comment:</strong>
+    <%= photocomment.body %>
+  </p>
+
+  <p>
+  <%= link_to 'Destroy Comment', [photocomment.photo, photocomment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>
+
+<% end %>  
+  
+</div>

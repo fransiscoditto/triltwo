@@ -1,0 +1,20 @@
+<% provide(:title, 'Posts') %>
+
+<h1>Posts</h1>
+
+<div id=content>
+
+<% @blogs.each do |blog| %>
+
+<h4 id=hasatu><%= blog.name %></h4>
+Posted at <%= blog.created_at.strftime("%d %B %Y") %><br><br>
+
+<%= blog.description.truncate(300).html_safe %><br>
+
+<%= link_to 'Show more', blog %>
+<br><br><br>    
+<% end %>
+
+<%= will_paginate @blogs %>  
+
+</div>

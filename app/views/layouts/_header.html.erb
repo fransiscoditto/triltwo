@@ -1,0 +1,86 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  
+  <div class="navbar-inner">
+    <div class="container">
+	  <div id="div" style="float : left; width:40px; height:40px">
+	  <%= link_to image_tag("homee.png", :class => "home_icon",id: "logo2", :alt => "Home"), "/home" %></div>
+      <%= link_to "The Parlente", '/home', id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+		<br/>          
+		
+		<script>
+		$(document).ready(function(){
+		$("#div1").mouseenter(function(){
+		$("#div1").animate({
+		opacity:'0.7'
+		
+		});
+		});
+		
+		$("#div1").mouseleave(function(){
+		$("#div1").animate({
+		opacity:'1'
+		});
+		});
+		
+		$("#div2").mouseenter(function(){
+		$("#div2").animate({
+		opacity:'0.7'
+		
+		});
+		});
+		
+		$("#div2").mouseleave(function(){
+		$("#div2").animate({
+		opacity:'1'
+		});
+		});
+		
+		$("#div3").mouseenter(function(){
+		$("#div3").animate({
+		opacity:'0.7'
+		
+		});
+		});
+		
+		$("#div3").mouseleave(function(){
+		$("#div3").animate({
+		opacity:'1'
+		});
+		});
+		
+		$("#div").mouseenter(function(){
+		$("#div").animate({
+		opacity:'0.7'
+		
+		});
+		});
+		
+		$("#div").mouseleave(function(){
+		$("#div").animate({
+		opacity:'1'
+		});
+		});
+				
+		});
+		</script>
+				
+		<div id="div1" style="float : left; width:33px; height:33px; opacity:1">
+		  <%= link_to image_tag("fb.png", :class => "facebook_icon", :alt => "Facebook"), "https://www.facebook.com/theparlente", :target => "_blank" %>
+        </div>
+		
+		<div id="div2" style="float : left;width:33px; height:33px; opacity:1">
+		  <%= link_to image_tag("twitter2.png", :class => "twitter_icon", :alt => "Twitter"), "https://twitter.com/the_parlente", :target => "_blank" %>
+		</div>
+
+		<div id="div3" style="float : left;width:33px; height:33px; opacity:1">
+		  <%= link_to image_tag("sound.png", :class => "sound_icon", :alt => "Twitter"), "https://soundcloud.com/parlente", :target => "_blank" %>
+		</div>  
+		  
+		<span>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

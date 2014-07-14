@@ -1,0 +1,122 @@
+@import "bootstrap";
+
+/* universal */
+
+html {
+  overflow-y: scroll;  
+}
+
+body {
+  padding-top: 45px;
+  background: url(/assets/back1.jpg);
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: left;
+  color: #000;
+}
+
+h2 {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #FFFFFF;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-left: 290px;
+  font-size: 2.2em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 0px;
+  font-weight: bold;
+  line-height: 2.4;
+}
+
+#logo1 {
+  float: center;
+  font-size: 1em;
+  color: #fff;
+
+}
+
+#logo2 {
+  float: left;
+  margin-right: 0px;
+  line-height: 2.4;
+  padding-top: 13px;
+}
+
+#logo:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+}
+
+footer a {
+  color: #000000;
+}  
+
+footer a:hover { 
+  color: #000000;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}

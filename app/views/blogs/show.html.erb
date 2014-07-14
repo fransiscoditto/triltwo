@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+<% provide(:title, 'Posts') %>
+
+<div id=content>
+  <h4 id=hasatu><%= @blog.name %></h4>
+  Posted at <%= @blog.created_at.strftime("%d %B %Y") %><br><br>
+  <%= @blog.description.html_safe %><br><br>
+
+<a href="/posts">Back</a>
+
+<hr>  
+  
+  <h4 id=hasatu>Comments</h4>
+<% @blog.blogcomments.each do |blogcomment| %>
+<p>
+<strong><%= blogcomment.username %></strong> said..<br>
+<%= blogcomment.body %>
+</p>  
+  
+  <% end %>
+
+<hr>  
+  
+  <h4 id=hasatu>Tell us what you think:</h4><br>
+<%= form_for([@blog, @blog.blogcomments.build]) do |f| %>
+  <p>
+    <%= f.label :Name %><br>
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :comment %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit "Tell" %>
+  </p>
+<% end %>
+
+</div>

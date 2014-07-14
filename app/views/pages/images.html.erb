@@ -1,0 +1,23 @@
+<% provide(:title, 'Images') %>
+
+<h1>Images</h1>
+
+<div id=content>
+
+
+<% @photos.each do |photo| %>
+    <div id=foto>
+	
+    <h4 id=hasatu><%= photo.name %></h4>
+	<%= photo.created_at.strftime("%d %B %Y") %><br><br>
+	<td><%= image_tag photo.picture_url(:thumb) if photo.picture? %>
+	<br>
+	<%= photo.caption %><br>
+    <%= link_to 'Show', photo %>
+	</div>
+	
+<% end %>
+
+<%= will_paginate @photos %>
+
+</div>

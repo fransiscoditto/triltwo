@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+<% provide(:title, 'Show') %>
+
+<div id=content>
+<p>
+  <b>Name:</b>
+  <%= @blog.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @blog.description %>
+</p>
+
+<%= link_to 'Edit', edit_backend_blog_path(@blog) %> |
+<%= link_to 'Back', backend_blogs_path %><br><br>
+
+<h4 id=hasatu>Comments</h4>
+
+<% @blog.blogcomments.each do |blogcomment| %>
+   <p> <strong>Name:</strong>
+    <%= blogcomment.username %>
+  </p>
+   <p> <strong>Comment:</strong>
+    <%= blogcomment.body %></td>	
+	</p>
+	<p>
+  <%= link_to 'Destroy Comment', [blogcomment.blog, blogcomment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>
+	<% end %>
+
+
+</div>
